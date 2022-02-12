@@ -29,9 +29,17 @@ namespace DataAccess.Concrete.MySql
             dBContext.ConnectionClose();
         }
 
-        public void Get(Brans entity)
+        public Brans Get(byte entityID)
         {
-            throw new NotImplementedException();
+            Brans brans = new Brans();
+            DbDataReader dr = dBContext.Baglan(new MySqlCommand(), "Select * From Branslar where BransID=('" +entityID + "')");
+            while (dr.Read())
+            {
+                brans.BransID = Convert.ToByte(dr[0]);
+                brans.BransAdi = dr[1].ToString();
+            }
+            dBContext.ConnectionClose();
+            return brans;
         }
 
         public List<Brans> GetAll()

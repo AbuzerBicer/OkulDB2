@@ -10,7 +10,7 @@ namespace Core.DataAccess
         public void Add(TEntity entity);
         public void Update(TEntity entity);
         public void Delete(TEntity entity);
-        public void Get(TEntity entity);
+        public TEntity Get(byte entityID);
         List<TEntity> GetAll();
     }
 }

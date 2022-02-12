@@ -21,6 +21,11 @@ namespace Business.Concrete
             _bransDal.Add(entity);
         }
 
+        public Brans Getir(byte ID)
+        {
+           return _bransDal.Get(ID);
+        }
+
         public void Guncelle(Brans entity)
         {
             _bransDal.Update(entity);

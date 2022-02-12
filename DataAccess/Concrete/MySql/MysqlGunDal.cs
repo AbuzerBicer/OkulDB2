@@ -27,7 +27,7 @@ namespace DataAccess.Concrete.MySql
             throw new NotImplementedException();
         }
 
-        public void Get(Gun entity)
+        public Gun Get(byte entityID)
         {
             throw new NotImplementedException();
         }
