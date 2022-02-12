@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Entities.Concrete
 {
-    public class Gun
+    public class Gun:IEntity
     {
         public byte GunID { get; set; }
         public string GunAdi { get; set; }
