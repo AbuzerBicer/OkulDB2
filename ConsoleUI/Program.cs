@@ -1,5 +1,6 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.MySql;
+using Entities.Concrete;
 using System;
 
 namespace ConsoleUI
@@ -8,11 +9,11 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            GunManager gunManager = new GunManager(new MysqlGunDal());
-            foreach (var gun in gunManager.HepsiniGetir())
-            {
-                Console.WriteLine(gun.GunAdi);
-            }
+            BransManager bransManager = new BransManager(new MysqlBransDal());
+            Brans brans = new Brans();
+            brans.BransID = 1;
+            brans.BransAdi = "din";
+            bransManager.Guncelle(brans);
             Console.WriteLine("Hello World!");
         }
     }

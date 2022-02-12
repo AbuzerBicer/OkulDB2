@@ -15,7 +15,6 @@ namespace Core.DataAccess
         {
             _connection = connection;
             _connection.ConnectionString = connectionString;
-
         }
 
         public DbDataReader Baglan(DbCommand command,string sorgu)

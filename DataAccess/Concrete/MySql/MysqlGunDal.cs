@@ -11,10 +11,15 @@ namespace DataAccess.Concrete.MySql
 {
     public class MysqlGunDal : IGunDal
     {
+        DBContext dBContext;
         string connectionString = "Server=Localhost;Database=Okuldb;UID=root;PWD=Ab.287358";
+        public MysqlGunDal()
+        {
+            dBContext = new DBContext(new MySqlConnection(), connectionString);
+        }
         public void Add(Gun entity)
         {
-            throw new NotImplementedException();
+        
         }
 
         public void Delete(Gun entity)
@@ -30,7 +35,6 @@ namespace DataAccess.Concrete.MySql
         public List<Gun> GetAll()
         {
             List<Gun> guns = new List<Gun>();
-            DBContext dBContext = new DBContext(new MySqlConnection(), connectionString);
             DbDataReader dr= dBContext.Baglan(new MySqlCommand(), "Select * From Gunler");
             while (dr.Read())
             {
